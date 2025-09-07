@@ -16,9 +16,7 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg text-gray-600 max-w-lg text-pretty leading-relaxed">
-              A passionate software engineer specializing in full-stack development with a keen eye for user experience.
-              I thrive on building robust, scalable applications and bringing creative ideas to life through code.
-              Dedicated to continuous learning and impactful contributions.
+              Full Stack Developer with 2.6 years of experience in the MERN stack. I'm adept at creating robust and scalable applications while collaborating effectively in Agile teams. I am a passionate and dedicated developer focused on impactful contributions and continuous learning.
             </p>
 
             <Button asChild size="lg" className="bg-black hover:bg-gray-800 text-white px-8">

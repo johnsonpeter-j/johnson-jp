@@ -39,13 +39,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      <body className={`${inter.className} ${inter.variable} antialiased`}>
+        {/* Only wrap parts of the app that suspend */}
+        <Suspense fallback={<div />}>{children}</Suspense>
       </body>
     </html>
   )

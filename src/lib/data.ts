@@ -1,20 +1,24 @@
 export const personalInfo = {
-  name: "John Doe",
-  title: "Full-Stack Developer",
-  email: "john.doe@example.com",
-  image:"/images/my-profile-square.png",
-  phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
-  website: "https://johndoe.dev",
-  github: "https://github.com/johndoe",
-  linkedin: "https://linkedin.com/in/johndoe",
-  twitter: "https://twitter.com/johndoe",
+  name: "Johnson JP",
+  title: "Mern Stack Developer",
+  email: "johnsonjp.developer@gmail.com",
+  image: "/images/my-profile-square.png",
+  phone: "+91 93610 93191",
+  location: "Kalayarkoil, Tamilnadu.",
+  github: "https://github.com/johnsonpeter-j",
+  linkedin: "www.linkedin.com/in/johnson-jp",
 }
 
 export const about = {
   description:
-    "Passionate full-stack developer with 5+ years of experience building scalable web applications. I specialize in React, Next.js, and TypeScript, with a strong focus on user experience and performance optimization. I love turning complex problems into simple, beautiful, and intuitive solutions.",
+    "A passionate Full Stack Developer specializing in the MERN stack, with 2.6 years of hands-on experience. I am adept at designing scalable, high-performance web applications and thrive on collaborating within Agile teams. My focus is on building secure, robust applications with a keen eye for responsive UI development. Dedicated to continuous learning, I am a proficient quick learner with a strong focus on adapting to the latest web technologies and frameworks.",
   image: "/images/my-profile.png",
+  what_i_bring: [
+    "2.6+ years of hands-on experience in full-stack development, specializing in the MERN stack.",
+    "A strong focus on user experience demonstrated by increasing user engagement scores by 25% and reducing application crashes by 40%.",
+    "Proficiency in modern web technologies including React.js, Node.js, Express.js, and MongoDB, with a strong understanding of best practices like MVC architecture and secure authentication.",
+    "A collaborative approach to problem-solving, with a history of working effectively in Agile teams."
+  ]
 }
 
 export const skills = [

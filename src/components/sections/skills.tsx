@@ -4,28 +4,76 @@ import { Badge } from "@/components/ui/badge"
 import { Monitor, Code, Palette, Database, Cloud, GitBranch, Users, Shield, Zap } from "lucide-react"
 
 export function SkillsSection() {
+  // const skillCategories = [
+  //   {
+  //     title: "Web Development",
+  //     icon: <Monitor className="h-8 w-8" />,
+  //     skills: ["React", "Next.js", "TypeScript", "Node.js", "Express.js"],
+  //   },
+  //   {
+  //     title: "Frontend Expertise",
+  //     icon: <Code className="h-8 w-8" />,
+  //     skills: ["HTML5", "CSS3", "Tailwind CSS", "Shadcn UI", "Responsive Design", "Material UI"],
+  //   },
+    // {
+    //   title: "UI/UX Design",
+    //   icon: <Palette className="h-8 w-8" />,
+    //   skills: ["Figma", "Wireframing", "Prototyping"],
+    // },
+    // {
+    //   title: "Database Management",
+    //   icon: <Database className="h-8 w-8" />,
+    //   skills: ["PostgreSQL", "MongoDB", "SQL", "NoSQL", "Prisma ORM"],
+    // },
+    // {
+    //   title: "Cloud & DevOps",
+    //   icon: <Cloud className="h-8 w-8" />,
+    //   skills: ["AWS", "Docker", "Vercel", "Netlify", "CI/CD"],
+    // },
+    // {
+    //   title: "Version Control",
+    //   icon: <GitBranch className="h-8 w-8" />,
+    //   skills: ["Git", "GitHub", "GitLab", "Branching Strategies"],
+    // },
+  //   {
+  //     title: "Agile Methodologies",
+  //     icon: <Users className="h-8 w-8" />,
+  //     skills: ["Scrum", "Kanban", "Sprint Planning", "Team Collaboration"],
+  //   },
+    // {
+    //   title: "Security Best Practices",
+    //   icon: <Shield className="h-8 w-8" />,
+    //   skills: ["Authentication", "Authorization", "OWASP Top 10", "Data Encryption"],
+    // },
+  //   {
+  //     title: "Performance Optimization",
+  //     icon: <Zap className="h-8 w-8" />,
+  //     skills: ["Web Vitals", "Code Splitting", "Lazy Loading", "Caching"],
+  //   },
+  // ]
+
   const skillCategories = [
-    {
-      title: "Web Development",
-      icon: <Monitor className="h-8 w-8" />,
-      skills: ["React", "Next.js", "TypeScript", "Node.js", "Express.js"],
-    },
-    {
-      title: "Frontend Expertise",
-      icon: <Code className="h-8 w-8" />,
-      skills: ["HTML5", "CSS3", "Tailwind CSS", "Shadcn UI", "Responsive Design"],
-    },
     {
       title: "UI/UX Design",
       icon: <Palette className="h-8 w-8" />,
-      skills: ["Figma", "Sketch", "Wireframing", "Prototyping", "User Research"],
+      skills: ["Figma", "Wireframing", "Prototyping"],
     },
     {
-      title: "Database Management",
+      title: "Frontend",
+      icon: <Monitor className="h-8 w-8" />,
+      skills: ["React.js", "Redux", "Redux-Saga", "JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "Material UI", "Tailwind CSS"],
+    },
+    {
+      title: "Backend",
+      icon: <Code className="h-8 w-8" />,
+      skills: ["Node.js", "Express.js", "RESTful APIs", "JWT Authentication", "Bcrypt", "Nodemailer"],
+    },
+    {
+      title: "Database",
       icon: <Database className="h-8 w-8" />,
-      skills: ["PostgreSQL", "MongoDB", "SQL", "NoSQL", "Prisma ORM"],
+      skills: ["MongoDB", "Mongoose", "PostgreSQL", "MySQL", "Firebase (basic)"],
     },
-    {
+      {
       title: "Cloud & DevOps",
       icon: <Cloud className="h-8 w-8" />,
       skills: ["AWS", "Docker", "Vercel", "Netlify", "CI/CD"],
@@ -36,21 +84,16 @@ export function SkillsSection() {
       skills: ["Git", "GitHub", "GitLab", "Branching Strategies"],
     },
     {
-      title: "Agile Methodologies",
-      icon: <Users className="h-8 w-8" />,
-      skills: ["Scrum", "Kanban", "Sprint Planning", "Team Collaboration"],
+      title: "Testing & Concepts",
+      icon: <Zap className="h-8 w-8" />,
+      skills: ["Jest", "MVC Architecture", "Responsive Design", "Error Handling", "Form Validation", "Secure Authentication"],
     },
     {
       title: "Security Best Practices",
       icon: <Shield className="h-8 w-8" />,
       skills: ["Authentication", "Authorization", "OWASP Top 10", "Data Encryption"],
     },
-    {
-      title: "Performance Optimization",
-      icon: <Zap className="h-8 w-8" />,
-      skills: ["Web Vitals", "Code Splitting", "Lazy Loading", "Caching"],
-    },
-  ]
+  ];
 
   return (
     <Section id="skills" className="bg-gray-50">

@@ -44,27 +44,20 @@ export function AboutSection() {
             <div className="space-y-4">
               <h4 className="text-lg font-medium text-foreground">What I Bring</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li className="flex items-start space-x-2">
+                {
+                  about.what_i_bring.map((whatIBringItem, whatIBringIndex)=>{
+                    return (                <li key={`what_i_bring_item_${whatIBringIndex}`} className="flex items-start space-x-2">
                   <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                  <span>5+ years of experience in full-stack development</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                  <span>Strong focus on user experience and performance optimization</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                  <span>Expertise in modern web technologies and best practices</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                  <span>Collaborative approach to problem-solving and team leadership</span>
-                </li>
+                  <span>{whatIBringItem}</span>
+                </li>)
+                  })
+                }
+
               </ul>
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 gap-6 pt-4">
+            {/* <div className="grid grid-cols-2 gap-6 pt-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">5+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
@@ -73,7 +66,7 @@ export function AboutSection() {
                 <div className="text-2xl font-bold text-primary">50+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
