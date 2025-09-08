@@ -75,11 +75,10 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-border">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+          <div className="flex justify-center items-center space-y-2 sm:space-y-0">
             <p className="text-muted-foreground text-sm">
               © {currentYear} {personalInfo.name}. All rights reserved.
             </p>
-            <p className="text-muted-foreground text-sm">Built with Next.js & Tailwind CSS</p>
           </div>
         </div>
       </div>

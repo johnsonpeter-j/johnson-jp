@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/section"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { projects } from "@/lib/data"
+import { personalInfo, projects } from "@/lib/data"
 
 export function ProjectsSection() {
   return (
@@ -76,7 +76,7 @@ export function ProjectsSection() {
         {/* View More Projects */}
         <div className="text-center">
           <Button asChild variant="outline" size="lg">
-            <Link href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer">
+            <Link href={personalInfo.github} target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
               View All Projects on GitHub
             </Link>

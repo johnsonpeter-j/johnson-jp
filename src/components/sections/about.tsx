@@ -26,7 +26,7 @@ export function AboutSection() {
                     src={about.image || "/placeholder.svg"}
                     alt={`${personalInfo.name} - About Photo`}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
               </CardContent>

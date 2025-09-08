@@ -35,11 +35,10 @@ export function ExperienceSection() {
                   <Card className="relative">
                     {/* Timeline Arrow */}
                     <div
-                      className={`absolute top-6 w-0 h-0 border-t-8 border-b-8 border-t-transparent border-b-transparent ${
-                        index % 2 === 0
+                      className={`absolute top-6 w-0 h-0 border-t-8 border-b-8 border-t-transparent border-b-transparent ${index % 2 === 0
                           ? "md:-right-2 md:border-l-8 md:border-l-card -left-2 border-r-8 border-r-card"
                           : "md:-left-2 md:border-r-8 md:border-r-card -left-2 border-r-8 border-r-card"
-                      }`}
+                        }`}
                     ></div>
 
                     <CardHeader>
@@ -52,7 +51,18 @@ export function ExperienceSection() {
                       <CardDescription className="text-base font-medium text-primary">{exp.company}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground leading-relaxed text-pretty">{exp.description}</p>
+                      {/* <p className="text-muted-foreground leading-relaxed text-pretty"></p> */}
+                      <ul className="space-y-2 text-muted-foreground">
+                        {
+                          exp.description.map((expDesItem, expDesIndex) => {
+                            return (<li key={`exp_des_item_${expDesIndex}`} className="flex items-start space-x-2">
+                              <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                              <span>{expDesItem}</span>
+                            </li>)
+                          })
+                        }
+
+                      </ul>
                     </CardContent>
                   </Card>
                 </div>
@@ -66,16 +76,12 @@ export function ExperienceSection() {
           <Separator className="max-w-xs mx-auto" />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">5+</div>
+              <div className="text-2xl font-bold text-primary">2+</div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">4</div>
+              <div className="text-2xl font-bold text-primary">2</div>
               <div className="text-sm text-muted-foreground">Companies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">50+</div>
-              <div className="text-sm text-muted-foreground">Projects Delivered</div>
             </div>
           </div>
         </div>
