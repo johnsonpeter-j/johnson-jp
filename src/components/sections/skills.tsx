@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/section"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Monitor, Code, Palette, Database, Cloud, GitBranch, Users, Shield, Zap } from "lucide-react"
+import { Monitor, Code, Palette, Database, Cloud, GitBranch, Shield, Zap } from "lucide-react"
 
 export function SkillsSection() {
   // const skillCategories = [

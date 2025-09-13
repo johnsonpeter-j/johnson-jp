@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail, ExternalLink, MapPin } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin } from "lucide-react"
 import { personalInfo } from "@/lib/data"
 
 export function Footer() {
