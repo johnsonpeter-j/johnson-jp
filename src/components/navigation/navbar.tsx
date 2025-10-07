@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { personalInfo } from "@/lib/data"
 import { ThemeToggle } from "@/components/navigation/theme-toggle"
 import Image from "next/image"
+import { useTheme } from "next-themes"
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -21,6 +22,7 @@ const navItems = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { theme} = useTheme()
 
   const handleNavClick = () => {
     setIsOpen(false)
@@ -35,7 +37,7 @@ export function Navbar() {
             {personalInfo.name}
           </Link> */}
           <Image
-            src={personalInfo.logo_image}
+            src={theme === "light" ? personalInfo.logo_image_light : personalInfo.logo_image_dark}
             alt={`Logo`}
             height={60}
             width={60}
