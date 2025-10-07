@@ -6,13 +6,15 @@ import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { personalInfo } from "@/lib/data"
+import { ThemeToggle } from "@/components/navigation/theme-toggle"
 import Image from "next/image"
-
 
 const navItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
+  { name: "Education", href: "#education" },
+  { name: "Certifications", href: "#certifications" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ]
@@ -41,8 +43,8 @@ export function Navbar() {
           />
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center gap-3">
+            <div className="ml-10 flex items-baseline space-x-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -53,6 +55,8 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
+            {/* Theme toggle on desktop */}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Navigation */}
@@ -68,6 +72,10 @@ export function Navbar() {
                 <SheetHeader>
                   <SheetTitle className="text-left">{personalInfo.name}</SheetTitle>
                 </SheetHeader>
+                {/* Theme toggle inside mobile drawer */}
+                <div className="mt-4">
+                  <ThemeToggle />
+                </div>
                 <div className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item) => (
                     <Link

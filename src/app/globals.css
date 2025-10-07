@@ -38,14 +38,15 @@
   --sidebar-accent-foreground: oklch(0 0 0);
   --sidebar-border: oklch(0.8 0 0);
   --sidebar-ring: oklch(0 0 0);
+  color-scheme: light;
 }
 
 .dark {
   /* Updated dark mode tokens for monochrome theme */
   --background: oklch(0 0 0); /* Black */
   --foreground: oklch(1 0 0); /* White */
-  --card: oklch(0.1 0 0); /* Very dark gray */
-  --card-foreground: oklch(0.9 0 0); /* Light gray */
+  --card: oklch(0.14 0 0); /* Very dark gray */
+  --card-foreground: oklch(0.92 0 0); /* Light gray */
   --popover: oklch(0 0 0); /* Black */
   --popover-foreground: oklch(1 0 0); /* White */
   --primary: oklch(1 0 0); /* White */
@@ -58,7 +59,7 @@
   --accent-foreground: oklch(1 0 0); /* White */
   --destructive: oklch(0.6 0.2 0); /* Lighter red for dark mode */
   --destructive-foreground: oklch(1 0 0); /* White */
-  --border: oklch(0.2 0 0); /* Dark gray */
+  --border: oklch(0.32 0 0); /* Dark gray */
   --input: oklch(0.1 0 0); /* Very dark gray */
   --ring: oklch(1 0 0); /* White */
   --chart-1: oklch(0.8 0 0);
@@ -74,6 +75,7 @@
   --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(0.2 0 0);
   --sidebar-ring: oklch(1 0 0);
+  color-scheme: dark;
 }
 
 @theme inline {

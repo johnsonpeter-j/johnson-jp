@@ -53,3 +53,44 @@ export const projects = [
     demo: "https://santhosh-clg-evnt-nextjs.vercel.app/",
   },
 ]
+
+
+export const education = [
+  {
+    degree: "B.Tech in Computer Science and Engineering",
+    institution: "Karunya University, Coimbatore",
+    period: "2019 – 2023",
+    details: [
+      "Graduated with Honors",
+      "Focused on Full Stack Web Development and Software Engineering"
+    ],
+  },
+];
+
+
+export const certifications = [
+  {
+    title: "Frontend Developer (React)",
+    issuer: "HackerRank",
+    year: "Mar 2025",
+    summary:
+      "Demonstrated proficiency in building responsive and performant front-end applications using React, JavaScript, and modern UI practices.",
+    credentialUrl: "https://www.hackerrank.com/certificates/cc75bd853a82",
+  },
+  {
+    title: "React (Basic) Certificate",
+    issuer: "HackerRank",
+    year: "Mar 2025",
+    summary:
+      "Proven understanding of React fundamentals including components, props, state management, and JSX syntax.",
+    credentialUrl: "https://www.hackerrank.com/certificates/7f26b51677ff",
+  },
+  {
+    title: "Node (Basic) Certificate",
+    issuer: "HackerRank",
+    year: "Mar 2025",
+    summary:
+      "Showcased knowledge of Node.js fundamentals such as modules, asynchronous programming, and server-side scripting.",
+    credentialUrl: "https://www.hackerrank.com/certificates/e443e70d9bfc",
+  },
+];

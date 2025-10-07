@@ -96,27 +96,23 @@ export function SkillsSection() {
   ];
 
   return (
-    <Section id="skills" className="bg-gray-50">
+    <Section id="skills" className="bg-background">
       <div className="space-y-12">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-gray-900">Skills</h2>
+          <h2 className="text-4xl font-bold text-foreground">Skills</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-white border border-gray-200 hover:shadow-md transition-shadow">
+            <Card key={index} className="bg-card border border-border hover:shadow-md transition-shadow">
               <CardHeader className="text-center pb-4">
-                <div className="flex justify-center mb-3 text-gray-700">{category.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
+                <div className="flex justify-center mb-3 text-muted-foreground">{category.icon}</div>
+                <h3 className="text-lg font-semibold text-card-foreground">{category.title}</h3>
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="flex flex-wrap justify-center gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <Badge
-                      key={skillIndex}
-                      variant="secondary"
-                      className="text-xs bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    >
+                    <Badge key={skillIndex} variant="secondary" className="text-xs">
                       {skill}
                     </Badge>
                   ))}

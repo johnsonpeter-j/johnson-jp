@@ -6,6 +6,8 @@ import { ExperienceSection } from "@/components/sections/experience"
 import { ProjectsSection } from "@/components/sections/projects"
 import { ContactSection } from "@/components/sections/contact"
 import { ScrollToTop } from "@/components/ui/scroll-to-top"
+import { EducationSection } from "@/components/sections/education"
+import { CertificationsSection } from "@/components/sections/certifications"
 
 export default function HomePage() {
   return (
@@ -14,6 +16,8 @@ export default function HomePage() {
       <AboutSection />
       <SkillsSection />
       <ExperienceSection />
+      <EducationSection />
+      <CertificationsSection />
       <ProjectsSection />
       <ContactSection />
       <ScrollToTop />

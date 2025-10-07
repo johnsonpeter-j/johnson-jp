@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Suspense } from "react"
 import "./globals.css"
+import { ThemeProvider } from "next-themes"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,8 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${inter.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
         {/* Only wrap parts of the app that suspend */}
         <Suspense fallback={<div />}>{children}</Suspense>
+        </ThemeProvider>
       </body>
     </html>
   )
