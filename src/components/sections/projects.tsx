@@ -20,7 +20,7 @@ export function ProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card key={index} className="group overflow-hidden hover:shadow-lg transition-all duration-300">
               {/* Project Image */}
