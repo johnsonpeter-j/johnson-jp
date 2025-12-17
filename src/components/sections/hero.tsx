@@ -44,14 +44,17 @@ export function HeroSection() {
 
             <div className="pt-2">
               <Button 
-                asChild 
                 size="lg" 
                 className="px-8 hover-lift transition-smooth group"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }}
               >
-                <Link href="#contact" className="flex items-center gap-2">
+                <span className="flex items-center gap-2">
                   Contact Me
                   <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </Link>
+                </span>
               </Button>
             </div>
           </div>

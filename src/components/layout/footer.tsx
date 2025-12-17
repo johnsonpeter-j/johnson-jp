@@ -1,9 +1,19 @@
+"use client"
+
 import Link from "next/link"
 import { Github, Linkedin, Mail, MapPin } from "lucide-react"
 import { personalInfo } from "@/lib/data"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
 
   return (
     <footer className="bg-card border-t border-border">
@@ -32,18 +42,34 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">Quick Links</h3>
             <div className="grid grid-cols-2 gap-2">
-              <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a 
+                href="#about" 
+                onClick={(e) => handleScrollTo(e, "#about")}
+                className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              >
                 About
-              </Link>
-              <Link href="#skills" className="text-muted-foreground hover:text-foreground transition-colors">
+              </a>
+              <a 
+                href="#skills" 
+                onClick={(e) => handleScrollTo(e, "#skills")}
+                className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              >
                 Skills
-              </Link>
-              <Link href="#experience" className="text-muted-foreground hover:text-foreground transition-colors">
+              </a>
+              <a 
+                href="#experience" 
+                onClick={(e) => handleScrollTo(e, "#experience")}
+                className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              >
                 Experience
-              </Link>
-              <Link href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
+              </a>
+              <a 
+                href="#projects" 
+                onClick={(e) => handleScrollTo(e, "#projects")}
+                className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              >
                 Projects
-              </Link>
+              </a>
             </div>
           </div>
 

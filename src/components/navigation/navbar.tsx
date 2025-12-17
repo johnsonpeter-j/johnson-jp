@@ -34,8 +34,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleNavClick = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
     setIsOpen(false)
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
   }
 
   return (
@@ -50,9 +55,13 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Name */}
-          <Link 
-            href="#hero" 
-            className="transition-transform duration-300 hover:scale-110"
+          <a 
+            href="#hero"
+            onClick={(e) => {
+              e.preventDefault()
+              document.querySelector("#hero")?.scrollIntoView({ behavior: "smooth", block: "start" })
+            }}
+            className="transition-transform duration-300 hover:scale-110 cursor-pointer"
           >
             <Image
               src={theme === "light" ? personalInfo.logo_image_light : personalInfo.logo_image_dark}
@@ -62,20 +71,21 @@ export function Navbar() {
               priority
               className="transition-opacity duration-300"
             />
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-3">
             <div className="ml-10 flex items-baseline space-x-2">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent rounded-md relative group"
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent rounded-md relative group cursor-pointer"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                </Link>
+                </a>
               ))}
             </div>
             {/* Theme toggle on desktop */}
@@ -101,15 +111,15 @@ export function Navbar() {
                 </div>
                 <div className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item, index) => (
-                    <Link
+                    <a
                       key={item.name}
                       href={item.href}
-                      onClick={handleNavClick}
-                      className="text-foreground hover:text-primary px-4 py-3 text-lg font-medium transition-all duration-300 hover:bg-accent rounded-md hover:translate-x-2"
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className="text-foreground hover:text-primary px-4 py-3 text-lg font-medium transition-all duration-300 hover:bg-accent rounded-md hover:translate-x-2 cursor-pointer"
                       style={{ animationDelay: `${index * 50}ms` }}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </SheetContent>
