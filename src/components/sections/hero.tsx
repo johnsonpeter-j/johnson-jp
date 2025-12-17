@@ -23,7 +23,7 @@ export function HeroSection() {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div 
+          <div
             ref={textRef as React.RefObject<HTMLDivElement>}
             className={cn(
               "space-y-6 transition-all duration-1000",
@@ -34,7 +34,6 @@ export function HeroSection() {
               Hello, I&apos;m{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">{personalInfo.name}</span>
-                <span className="absolute bottom-2 left-0 right-0 h-3 bg-primary/20 -z-0"></span>
               </span>
             </h1>
 
@@ -43,8 +42,8 @@ export function HeroSection() {
             </p>
 
             <div className="pt-2">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="px-8 hover-lift transition-smooth group"
                 onClick={(e) => {
                   e.preventDefault()
@@ -60,7 +59,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Image */}
-          <div 
+          <div
             ref={imageRef as React.RefObject<HTMLDivElement>}
             className={cn(
               "flex justify-center lg:justify-end transition-all duration-1000",

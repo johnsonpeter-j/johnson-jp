@@ -48,10 +48,19 @@ export const projects = [
     title: "College Event Page",
     description:
       "The college event page was developed using Next.js and styled with Tailwind CSS. This platform provides a comprehensive overview of the event, with dedicated sections for speakers, collaborators, and workshops.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     image: "/images/project/santhosh_clg_event.png",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/johnsonpeter-j/santhosh_clg_evnt_nextjs",
-    demo: "https://santhosh-clg-evnt-nextjs.vercel.app/",
+    demo: "https://fos-tsm.vercel.app/",
+  },
+  {
+    title: "Portfolio Builder",
+    description:
+      "A full-stack portfolio builder that lets users create and publish portfolios using customizable templates. Features include a live editor, authentication, multiple portfolio management, and one-click publishing with unique shareable URLs.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS","MongoDB","NextAuth"],
+    image: "/images/project/porfolio-builder.png",
+    github: "https://github.com/johnsonpeter-j/portfolio-builder",
+    demo: "https://jp-portfolio-builder.vercel.app",
   },
 ]
 
