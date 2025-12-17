@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -9,6 +9,7 @@ import { personalInfo } from "@/lib/data"
 import { ThemeToggle } from "@/components/navigation/theme-toggle"
 import Image from "next/image"
 import { useTheme } from "next-themes"
+import { cn } from "@/lib/utils"
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -22,27 +23,46 @@ const navItems = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const { theme} = useTheme()
+  const [scrolled, setScrolled] = useState(false)
+  const { theme } = useTheme()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const handleNavClick = () => {
     setIsOpen(false)
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <nav 
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300",
+        scrolled 
+          ? "bg-background/98 backdrop-blur-md shadow-sm border-border/50" 
+          : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-border"
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Name */}
-          {/* <Link href="#hero" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            {personalInfo.name}
-          </Link> */}
-          <Image
-            src={theme === "light" ? personalInfo.logo_image_light : personalInfo.logo_image_dark}
-            alt={`Logo`}
-            height={60}
-            width={60}
-            priority
-          />
+          <Link 
+            href="#hero" 
+            className="transition-transform duration-300 hover:scale-110"
+          >
+            <Image
+              src={theme === "light" ? personalInfo.logo_image_light : personalInfo.logo_image_dark}
+              alt={`Logo`}
+              height={60}
+              width={60}
+              priority
+              className="transition-opacity duration-300"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-3">
@@ -51,9 +71,10 @@ export function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200 hover:bg-accent rounded-md"
+                  className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent rounded-md relative group"
                 >
                   {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
             </div>
@@ -65,7 +86,7 @@ export function Navbar() {
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-foreground">
+                <Button variant="ghost" size="icon" className="text-foreground transition-all duration-300 hover:scale-110">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open navigation menu</span>
                 </Button>
@@ -79,12 +100,13 @@ export function Navbar() {
                   <ThemeToggle />
                 </div>
                 <div className="flex flex-col space-y-4 mt-8">
-                  {navItems.map((item) => (
+                  {navItems.map((item, index) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={handleNavClick}
-                      className="text-foreground hover:text-primary px-4 py-3 text-lg font-medium transition-colors duration-200 hover:bg-accent rounded-md"
+                      className="text-foreground hover:text-primary px-4 py-3 text-lg font-medium transition-all duration-300 hover:bg-accent rounded-md hover:translate-x-2"
+                      style={{ animationDelay: `${index * 50}ms` }}
                     >
                       {item.name}
                     </Link>
