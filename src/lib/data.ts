@@ -60,7 +60,7 @@ export const projects = [
       technologies: ["Next.js", "TypeScript", "Tailwind CSS","MongoDB","NextAuth"],
     image: "/images/project/porfolio-builder.png",
     github: "https://github.com/johnsonpeter-j/portfolio-builder",
-    demo: "https://jp-portfolio-builder.vercel.app",
+    demo: "https://portyfi.vercel.app",
   },
 ]
 
